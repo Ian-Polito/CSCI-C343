@@ -1,0 +1,31 @@
+C343 Summer 2018
+Lab 10
+Ian Polito
+ipolito
+
+Task A
+A fixed length code for these four characters would require log4 or 2 bits per letter.
+With Huffman coding, a better coding would be as follows.
+A     1 bit     0
+T     2 bits    11
+C     3 bits    101
+G     3 bits    100
+Using this, the bits per letter can be calculated by assuming that the total frequency of
+these characters is 50.
+[(1*25)+(2*17.5)+(3*5)+(3*2.5)] / 50 equals 1.65 bits per character, so for this problem, the compression ratio is (100 /
+82.5) which equals 1.21
+
+Task B
+For my buildCodeTable method, I used a helper function that takes a BinNode and a string, where the node is the current
+node we are currently at and the string is an accumulator that keeps track of the left and right decisions. The method checks
+if the given node is a leaf and adds its value and the accumulator string to the codeTable if it is. Otherwise it calls
+the recursive function with the left and right nodes provided they are not null, and adding 0 to the accumulator for the left
+recursive call and 1 for the right recursive call.
+
+For my decode method, I created another helper function that takes a BinNode, and two Strings, where the node is the current
+node we are currently at and the first string is the inCode that will be slowly substring'd until its empty, and the second
+string is the accumulator for the decoded result. The method checks if the given node is a leaf and adds the value of the node
+to the result if it is and calls the helper again with the root (so it can start back up at the top), the inCode, and the
+updated out result if the inCode length is greater than 0, otherwise it simply returns the decoded result. If the node is not
+a leaf, it checks the first character of the inCode and calls the recursive helper with the left or right node (depending on
+if the first character was a 1 or a 0), the inCode without the first character and the accumulator decoded string.

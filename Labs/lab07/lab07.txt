@@ -1,0 +1,19 @@
+C343 Summer 2018
+Lab 07
+Ian Polito
+ipolito
+
+Task A
+The best case scenario would be if the element to be deleted was the last element, since it would then not need to shift any
+elements in the array to the left if using the second method, and it would not need to search any more in the array in the
+first method. The worst case scenario however, would be if the element to be deleted was the first element, since it would
+then have to shift all the other elements in the array to the left if the second method was used, and it would have to search
+through the entire array if using the first method. The average case then, would be if the element to be deleted was a middle
+element, and it would have to shift half the elements in the array to the left if using the second method, and it would have
+to search through half the array if using the first method.
+
+Task C
+While the first version of removeAt is more efficient, it leaves blank spaces in the array that are essentially wasted space.
+In addition, any operation that involves searching through the array will also consider that null index, meaning that with
+more null removed indices, the more time will be wasted looking at 'removed' indices. This is why I think this implementation
+is not suitable for Java.

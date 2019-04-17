@@ -1,0 +1,16 @@
+C343 Summer 2018
+Lab 13
+Ian Polito
+ipolito
+
+Partner
+Levi Beyers
+lebeyers
+
+Analysis
+For the counting sort to be effective, the maximum key value k should be small otherwise
+the B array will take up a lot of space. If this is true the algorithm is very efficient
+since in terms of the number of records n, it runs in linear time complexity.
+
+No matter whether k is larger or smaller than n, the time complexity for counting sort is
+still Big-Theta(n) since k only affects space complexity, not time.

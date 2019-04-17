@@ -1,0 +1,20 @@
+﻿C343 Summer 2018
+homework 01
+Ian Polito
+ipolito
+
+a) Θ(1)
+b) Θ(n)
+c) Θ(n^2)
+d) Θ(nlogn)
+e) Θ(nlogn)
+f) Θ(nlogn)
+g) Θ(n^2logn)
+h) Θ((n^2)/2)
+
+Task B
+In order to calculate the hamming distance between two DNA strings, I used a for loop to go through
+the strings character by character using the String.charAt function to check if parts were different.
+I used an integer to keep track of the differences. In order to test this with DNA strings of length
+100, I created a new DNA string creation function that took an integer argument and made DNA strings
+of arbitrary length.

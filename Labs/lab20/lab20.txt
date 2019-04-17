@@ -1,0 +1,35 @@
+C343 Summer 2018
+Lab 20
+Ian Polito
+ipolito
+
+Task A
+1. For inserting 23 into this AVL tree, it will be placed initially as the left child node of 26. This makes the tree
+needs to be balanced, so 26 will be rotated to the right so that its left child will be 23 and its right child will be 29. For
+inserting 55, it will initially be placed as the right child node of 50, and again needs to be balanced. So, 50 will be
+rotated to the left so that the left child of 55 is 50, then 65 needs to be rotated to the right so that 55 is the parent node
+and its left child is 50 and its right child is 65
+
+Task B
+1.
+To start Prim's algorithm we'll choose the source node as E, although any could be chosen, so the initial array D would be
+E F C A D B
+0 ? ? ? ? ?
+The neighbors of E are checked and the array is updated like so
+E F  C A D B
+0 10 5 ? 3 ?
+The algorithm chooses the shortest edge, so this means that it will go to D and check it's neighbors, so the array will be
+updated like so
+E F  C A D B
+0 10 5 ? 3 15
+Now the algorithm will go to B since it is the shortest edge and will check it's neighbors
+E F  C A D B
+0 10 5 3 3 15
+C will not be updated since although there is a path from B to C, it is longer than 3. Then it will go to A and update the
+array based on its neighbors
+E F C A D B
+0 10 5 2 3 3
+Since from A to F there is a shorter path, and from A to B there is a shorter path, the array will be updated. After this, F
+and C will be visited since they need to be checked, but the array will not be updated since there aren't any shorter paths
+that can be used from them, meaning the cost of this MST will be 23.
+2. D -> E -> C -> A -> F -> B

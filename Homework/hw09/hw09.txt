@@ -1,0 +1,48 @@
+﻿C343 Summer 2018
+Homework 9
+Ian Polito
+ipolito
+
+Task A
+djikstra2() method was implemented using the algorithm pseudocode found in the textbook on page 391 and uses the given MinHeap and BinNode classes
+given to us.
+
+Task B
+
+1. Because the algorithm finds the shortest path from vertex i to every other vertex in addition to finding the shortest path from vertex i to vertex j in
+the worst case, Dijkstra's algorithm is asymptotically as efficient as any algorithm for finding the shortest path from some vertex to another vertex.
+
+2. 
+4 1 2 3 5 6
+0 ∞ ∞ ∞ ∞ ∞
+
+4 1  2 3 5  6
+0 20 5 ∞ 11 10
+
+4 1  2 3 5  6
+0 20 5 8 11 10
+
+3.
+create array D[number of vertices]
+for all vertices v
+	D[v] = Infinity
+D[source vertex] = 0
+for all vertices i
+	vertex v = next closest vertex
+	set v to visited
+	if D[v] = Infinity it is unreachable, stop
+	for all adjacent vertices w
+		if D[w] greater than D[v] + weight of edge v to w
+			D[w] = D[v] + weight of edge v to w
+array D contains all shortest paths from nodes to source
+
+4. The graph with the following adjacency matrix will not work with Dijkstra's algorithm
+   A B C D
+ A 0 2 1 5
+ B   0 2
+ C     0
+ D  -7   0
+This is because if Djikstra's algorithm starts at vertex A, initially A -> will be marked as 0 and the rest will be marked as infinity. Then, A -> B will
+be marked as 2, A -> D will be marked as 5, and A -> C will be marked as 1 as they are the shortest paths from A to those vertices found so far. However, since
+going from A to D and then D to be will have a cost of -2, the shortest path from A -> B will be updated, but the algorithm will be unable to update the path
+from A to C, even though there is a shorter path from A to C (A to D to B to C) and causes it to fail.

@@ -1,0 +1,178 @@
+﻿C343 Summer 2018
+Homework 5
+Ian Polito
+ipolito
+
+Task A
+The editDistance method was implemented by adapting the given pseudocode into a Java implementation.
+A few edits to the pseudocode were needed, for instance the matrix d needed to be created and made
+with the lengths of the string arguments as row and column lengths, integers i and j needed to be
+initialized within their loops, and int c needed to be initialized before being used. In addition,
+the minimum method that took three ints and returned the smallest needed to be implemented.
+
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at DNAEditDist.editDistance(DNAEditDist.java:23)
+	at DNAEditDist.main(DNAEditDist.java:70)
+This error probably occurred because algorithm's running time grows by n^2 where n is the length
+of the given dna strings. So not enough memory was available to calculate the edit distance of
+the strings as they got too large.
+
+Results:
+
+Time taken to generate string 1 in ms: 0
+Time taken to generate string 2 in ms: 0
+String length: 4
+Hamming Distance: 3
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 2
+Time taken to find Edit Distance in ms: 0
+
+Time taken to generate string 1 in ms: 0
+Time taken to generate string 2 in ms: 0
+String length: 8
+Hamming Distance: 4
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 4
+Time taken to find Edit Distance in ms: 0
+
+Time taken to generate string 1 in ms: 0
+Time taken to generate string 2 in ms: 0
+String length: 16
+Hamming Distance: 11
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 10
+Time taken to find Edit Distance in ms: 0
+
+Time taken to generate string 1 in ms: 0
+Time taken to generate string 2 in ms: 0
+String length: 32
+Hamming Distance: 22
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 18
+Time taken to find Edit Distance in ms: 0
+
+Time taken to generate string 1 in ms: 1
+Time taken to generate string 2 in ms: 0
+String length: 64
+Hamming Distance: 49
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 34
+Time taken to find Edit Distance in ms: 0
+
+Time taken to generate string 1 in ms: 0
+Time taken to generate string 2 in ms: 1
+String length: 128
+Hamming Distance: 98
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 69
+Time taken to find Edit Distance in ms: 1
+Time taken to generate string 1 in ms: 0
+Time taken to generate string 2 in ms: 1
+String length: 256
+Hamming Distance: 197
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 129
+Time taken to find Edit Distance in ms: 4
+
+Time taken to generate string 1 in ms: 1
+Time taken to generate string 2 in ms: 1
+String length: 512
+Hamming Distance: 381
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 271
+Time taken to find Edit Distance in ms: 4
+
+Time taken to generate string 1 in ms: 3
+Time taken to generate string 2 in ms: 3
+String length: 1024
+Hamming Distance: 769
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 542
+Time taken to find Edit Distance in ms: 9
+
+Time taken to generate string 1 in ms: 10
+Time taken to generate string 2 in ms: 10
+String length: 2048
+Hamming Distance: 1508
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 1078
+Time taken to find Edit Distance in ms: 26
+
+Time taken to generate string 1 in ms: 7
+Time taken to generate string 2 in ms: 6
+String length: 4096
+Hamming Distance: 3055
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 2115
+Time taken to find Edit Distance in ms: 112
+
+Time taken to generate string 1 in ms: 25
+Time taken to generate string 2 in ms: 76
+String length: 8192
+Hamming Distance: 6190
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 4246
+Time taken to find Edit Distance in ms: 289
+
+Time taken to generate string 1 in ms: 229
+Time taken to generate string 2 in ms: 244
+String length: 16384
+Hamming Distance: 12241
+Time taken to find Hamming Distance in ms: 0
+Edit Distance: 8494
+Time taken to find Edit Distance in ms: 1061
+
+Time taken to generate string 1 in ms: 445
+Time taken to generate string 2 in ms: 112
+String length: 32768
+Hamming Distance: 24547
+Time taken to find Hamming Distance in ms: 1
+(Run-Time Crash)
+
+The method that took the longest to run was always and definitively editDistance. The hammingDistance
+method always took shorter and was always very fast. This is because editDistance running time grows
+with n by n^2. This is because the algorithm uses two nested loops to go through the strings,
+inserting, deleting and replacing characters one at a time to calculate the edit distance.
+
+Task B
+Exercise 7.18
+a) Since finding the minimum value takes ϴ(n) since every value must be considered if the values are
+not sorted, this operation is not best implemented by sorting first. Assuming that the values are
+randomly distributed, the best sorting algorithm would have a time complexity of ϴ(nlogn) which
+grows faster than ϴ(n). The most efficient algorithm would go through the values sequentially,
+checking each time if the minimum found so far is larger than the next value until all values have
+been checked.
+b) Since finding the maximum value takes ϴ(n) since every value must be considered if the values are
+not sorted, this operation is not best implemented by sorting first. Assuming that the values are
+randomly distributed, the best sorting algorithm would have a time complexity of ϴ(nlogn) which
+grows faster than ϴ(n). The most efficient algorithm would go through the values sequentially,
+checking each time if the maximum found so far is smaller than the next value until all values have
+been checked.
+c) Since finding the arithmetic mean takes ϴ(n) since every value must be considered even if the
+values are sorted, this operation is not best implemented by sorting first. The most efficient
+algorithm would go through the values, totalling them up then dividing that total by the number of values.
+d) To find the median, or middle value, it would take O(n^2) time, which means that sorting the list
+of values first would be the best way to implement this. The algorithm as a whole would take ϴ(nlogn)
+since sorting using mergesort takes ϴ(nlogn) and then calling the middle value (assuming that an
+array is being used) takes constant time.
+e) Since finding the value that appears the most time takes O(n) since every value must be considered
+even if the values are sorted, this operation is not best implemented by sorting first. The most
+efficient algorithm would go through the list and for each new value create a new Object to keep track
+of the value and number of times it has occured in the list. Then each time a repeat value was found, it
+would increment the appropriate object until there were no more values in the list, then it would simply
+return the number of the Object with the most occurences.
+
+The hamming distance between "ABAT" and "BATA" is 4.
+To calculate the edit distance we can start with the initialized table
+[(0, 1, 2, 3, 4)
+ (1, 0, 0, 0, 0)
+ (2, 0, 0, 0, 0)
+ (3, 0, 0, 0, 0)
+ (4, 0, 0, 0, 0)]
+Following the given algorithm the finished table would be
+[(0, 1, 2, 3, 4)
+ (1, 1, 1, 2, 3)
+ (2, 1, 2, 1, 2)
+ (3, 2, 2, 2, 1)
+ (4, 3, 3, 2, 2)]
+Therefore the edit distance is 2.

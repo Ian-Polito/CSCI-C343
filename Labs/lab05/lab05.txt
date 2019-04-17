@@ -1,0 +1,17 @@
+C343 Summer 2018
+Lab 05
+Ian Polito
+ipolito
+
+Task A
+ADT for a two-dimensional array of integers
+	set a particular index in the matrix to a given integer
+	make all indices in the matrix 0
+	get an integer in a particular index in the matrix
+	return a particular row (array) in the matrix
+	set a particular row (array) to a given integer
+	make all indices in a row (array) to 0
+	return a particular column (array) in the matrix
+	set a particular column (array) to a given integer
+	make all indices in a column (array) to 0
+	print matrix

@@ -1,0 +1,13 @@
+C343 Summer 2018
+Lab 06
+Ian Polito
+ipolito
+
+To implement TweetCollection I used an LinkedList to store Tweet objects. Once initialized
+in the constructor, it called a method that scans the given URL using a scanner to create
+tweets and add them to the LinkedList. As far as the other operations that allow clients
+to use the collection of tweets, I created a method to print all tweets that were tweeted
+by a given author and a method to print tweets that contain in their content a given search
+term. This was accomplished by looping through the LinkedList and printing the tweet using an
+overridden toString method if the tweet's author matches the given author for the one method
+and if the tweet's content contains the given search term for the other method.

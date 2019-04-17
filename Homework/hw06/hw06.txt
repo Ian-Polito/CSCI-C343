@@ -1,0 +1,16 @@
+﻿C343 Summer 2018
+Homework 6
+Ian Polito
+ipolito
+
+Teammate
+Levi Beyers
+lebeyers
+
+Analysis of flood() method
+Since we needed to use an Iterator to be able to add to the floodList while processing the LinkedList, when a new coord is added, the
+Iterator is set back to the beginning of the list. This is necessary since new coords need to be processed as well to check if their
+neighbors should be added to the list as well. Ultimately this makes the flood function run at a time complexity of O(n^2), and could be
+greatly improved if it were possible to add the new coord to the end of the list.
+
+For this collaborative assignment, I programmed part of the flood() method and wrote the time complexity analysis.

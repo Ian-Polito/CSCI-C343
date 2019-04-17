@@ -1,0 +1,14 @@
+C343 Summer 2018
+Lab 19
+Ian Polito
+ipolito
+
+The task is implemented by creating a hash table using a string as the key (for words
+found in the text file) and a linked list of integers (for containing the line numbers),
+Then the file name is used with the scanner that processes the text file line by line
+and splitting them into strings. These strings are checked if they are already in the
+table; if they are the linked list is updated with the additional line number, and if
+the string is not, a new linked list is created and the word and linked list is put in
+the hash table. Then for the wordQuery method, it checks if the given word is contained
+in the hash table and if so, prints the line numbers where it is found, otherwise it
+prints that the given word was not found.

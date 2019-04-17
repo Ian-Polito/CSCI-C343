@@ -1,0 +1,44 @@
+C343 Summer 2018
+Homework 2
+Ian Polito
+ipolito
+
+Task A
+[Exercise 4.1]
+next();
+next();
+remove();
+This will remove the element with value 15 since after calling next twice, that element will be the element immediately to the
+right of the current position, therefore it will be removed when remove() is called.
+
+[Exercise 4.11]
+a) The linked list will use less space if the number of elements stored is less than 13.33
+This is found by using the space equation and by simplifying n > 20*8/(4+8)
+b) The linked list will use less space if the number of elements stored is less than 10
+This is found by using the space equation and by simplifying n > 30*2/(4+2)
+c) The linked list will use less space if the number of elements stored is less than 6
+This is found by using the space equation and by simplifying n > 30*1/(4+1)
+d) The linked list will use less space if the number of elements stored is less than 35.55
+This is found by using the space equation and by simplifying n > 40*32/(4+32)
+
+Task B
+[Exercise 3.3]
+2, log3(n), log2(n), 20n, 4n^2, 3^n, n!
+From slowest to fastest, this is the order of growth of these equations which was determined using the
+growth rate table figure 3.1 on textbook page 57
+
+[Exercise 3.8]
+a) The upper bound is O(n) since if c = c1 and n0 = 1, for c1n <= cn all n > n0. The lower bound is Ω(n) since for c1n >= cn all n > n0
+b) The upper bound is O(n^3) since c2n^3 <= c2n^3 + c3 <= (c2 + c3)n^3 for all c3 >= 0. So T(n) <= cn^3 for c = c2 + c3 and n0 = 1. This
+means that T(n) must be O(n^3). The lower bound is Ω(n^3)  if we assume c2n^3 + c3n for c2 and c3 > 0. This means that c2n^3 + c3n >= cn^3
+for all n > 1. Therefore for T(n) >= cn^3 for c = c2 and n0 = 1 and T(n) must be Ω(n^3).
+c) The upper bound is O(nlogn) since c4nlogn + c5n <= c4nlogn + c5nlogn <= (c4 + c5)nlogn if c = c4 + c5 and n0 = 1. In addition, the lower
+bound is Ω(nlogn) since c4nlogn + c5n >= c4nlogn >= cnlogn for c4 and c5 > 0. Therefore for T(n) >= cnlogn for c = c4 and n0 = 1, T(n)
+must be Ω(nlogn).
+d) The upper bound is O(2^n) since c6(2^n) + c7n^6 <= c6(2^n) + c7(2^n) <= (c6 + c7)2^n if c = c6 + c7 and n0 = 1. The lower bound must
+be Ω(2^n) since c6(2^n) + c7n^6 >= c6(2^n) >= c(2^n) for c6 and c7 > 0. THerefore for T(n) >= c(2^n) for c = c6 and n0 = 1, T(n) must be
+Ω(2^n).
+c62^n + c7n^6
+
+[Exercise 3.12]
+i) Θ(n) since the for loop will always execute n times assuming that n is an even number

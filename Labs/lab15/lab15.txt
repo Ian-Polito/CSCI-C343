@@ -1,0 +1,10 @@
+C343 Summer 2018
+Lab 15
+Ian Polito
+ipolito
+
+numberOfEdges() method was implemented by adopting the given pseudocode. The first for loop sets the Dynamic Programming
+matrix to zero where we know the connection is to itself. Then the second nested for loop set checks each vertex and changes
+the matrix to 1 where there is a connection to another vertex, otherwise it sets it to 999 since we don't know if there is
+a connection to that vertex. Lastly, the final triple nested for loop goes through the matrix, reusing previous results to
+calculate the shortest path to all vertices.

@@ -1,0 +1,15 @@
+C343 Summer 2018
+Lab 08
+Ian Polito
+ipolito
+
+The find() method for BinNodeJr uses the compareTo method to check if the current node's
+value is the same as the one we are looking for, and returns true if so. Otherwise it
+recursively calls find() on the left and right nodes as long as they aren't null to keep
+searching the tree for the given value.
+
+The checkBalance() method for BSTJr starts at the root and checks the height of the left
+and right nodes as long as they aren't null and ensures that the height of each does not
+differ by more than one. If they do differ by more than one it returns false, otherwise it
+recursively calls checkBalance() on the left and right nodes as long as they aren't null
+to check if the entire tree is balanced.

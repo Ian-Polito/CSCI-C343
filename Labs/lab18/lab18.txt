@@ -1,0 +1,11 @@
+C343 Summer 2018
+Lab 18
+Ian Polito
+ipolito
+
+Prim's algorithm for this assignment was implemented by adopting the given pseudocode for the algorithm. It starts by creating
+an array dist for containing the distances to each node and makes dist[0] = 0 as the source node. It processes each node by
+using the minVertex method much like Dijkstra's algorithm and increments the total cost of the MST by the dist[new node]. Then
+the relaxation operation is done which for all neighbors of the current node checks if the weight between neighbors and the
+current node is less than the dist[neighboring node] and sets the dist[neighboring node] to the weight between the neighbor and
+the current node if so. This calculates the total cost of the MST and the dist array for the tree.

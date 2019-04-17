@@ -1,0 +1,36 @@
+C343 Summer 2018
+Homework 10
+Ian Polito
+ipolito
+
+Task A
+1. 
+a) Djikstra's algorithm does not necessarily form a spanning tree since there could be a case with a directed graph where the
+algorithm finds a shortest path from the source node to some other node that does not allow from going to that node back to
+the source, meaning that there may not be a path from any node to any other node.
+b) Dijkstra's algorithm does not form a minimum cost spanning tree since instead of choosing the next edge that is closer
+to a vertex in the MST, which is how Prim's algorithm finds an MST, it chooses the closest edge to any other vertex.
+2. 
+a) Choosing node 0 does not matter, since finding the MST of a graph can be done by starting at any node. The distance to that
+node is set to 0 though, because it costs 0 weight to go from that node to itself.
+b) It is different because in this algorithm it does not increment or check based on where the path has come from, and only
+cares about the weight from this particular node.
+c) This is Prim's algorithm.
+3. 
+a)
+for every vertex in the given DAG
+     use Dijkstra's algorithm on each node
+          if successful, this node is a root since a path can be found from it to any other node
+b) The time complexity for this algorithm is O(v^3) since Dijkstra's algorithm takes O(v^2) time and this needs to be done
+potentially for every vertex.
+
+Task B
+1. For inserting 150 into this AVL tree, it will initially be placed as the right node of 120, however this will make it
+necessary to be balanced. 42 will be rotated to the left so that 120 is the parent node and 42 is its left node and 150 is its
+right node, making it balanced again.
+
+Task C
+2. When 55 is inserted into the B tree, it will go down to where 50, 52, and 60 are, but since that part is full, the parent node will
+need to be adjusted. 48 will move down to 47 and 50 will take 48's place so that 55 can be put between 52 and 60. When 61 the same thing
+will happen and the parent node will need to be adjusted again. 50 will move down to where 47 and 48 are and 52 will take its place so
+that 61 can be fit after 55 and 60.

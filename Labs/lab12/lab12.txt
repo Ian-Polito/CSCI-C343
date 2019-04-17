@@ -1,0 +1,3 @@
+Partner: Levi Beyers lebeyers
+
+The recursive solution does not check if the cell to be added is within bounds. In addition, it also calls the recursive function on all four of its neighbors, which very well may be cells that are already in the list. Lastly, it does not check if the cell is already part of the list, so it will add duplicates. Based on this, the non-recursive pseudocode solution is the better route.

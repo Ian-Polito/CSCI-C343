@@ -1,0 +1,51 @@
+C343 Summer 2018
+Homework 4
+Ian Polito
+ipolito
+
+Exercise 5.7
+if node is not null
+    If node is the root, add it to the queue, then add left and right children to queue
+    else, add left and right children to queue
+    then recursively call function on left child, then right child if they are not null
+    
+Exercise 5.14
+This is because it needs to be explicitly known where an equal number should be in a BST. For instance if you needed to search
+for all duplicates of a particular number, you would traverse through the tree until you found the number, then keep going
+right until all instances of that number were found. If equal numbers could be stored in the left or the right, you would need
+to traverse both left and right after finding the number which would be much less efficient.
+
+Exercise 5.15
+a) The root would be 15, its left child would be 5 and its right child would be 20. 5 left child would be null and its right
+child would be 7. 20 left child would be 18 and its right child would be 25. 18 left child would be 16 and its right child
+would be null.
+b) Preorder: 15, 5, 7, 20, 18, 16, 25
+   Inorder: 5, 7, 15, 16, 18, 20, 25
+   Postorder: 7, 5, 16, 18, 25, 20, 15
+
+Exercise 5.24
+The smallest element would be at the end of the array. This is because a maxheap is partially sorted and has the smallest
+element at the end of the array to maintain the heap property.
+
+Exercise 5.32
+a) An array-based list maintained in sorted order would be best since we know the records will be sorted so insertion will be
+efficient and then the searches will be efficiently O(logn)
+b) A linked list of unsorted records would be best due to the fact that there are much more insertions than searches. The
+insertions for a linked list would be very efficiently constant, and while the few searches that would be done would be O(n),
+this is overall most efficient.
+c) A binary search tree would be best since the data is unsorted and randomly distributed (so it will be balanced) and there
+are many searches that will need to made. This means that the searches would be efficiently O(logn)
+d) A binary search tree would be best since the data is unsorted and randomly distributed (so it will be balanced) and there
+are a very large number of searches that need to be made. This means that the searches would be efficiently O(logn) which is
+necessary due to the large number of searches.
+
+Task C
+1. Instead of using the provided size variable, I chose to implement this algorithm by adding two variables that kept track of the
+number of nodes to the left and to the right in order to help me solve this problem. The method first checks (and only does this the
+first time) if the given argument k is larger than the number of nodes in the tree or smaller than one, in either case an exception is
+thrown. The base case for the algorithm is if the number of nodes to the left is equal to k - 1 or if k is equal to 2 and is equal to
+the number of nodes to the left, in which case the current node should be returned. Otherwise, if the number of left children is larger
+than or equal to k, the method returns the left node's call to findKthSmallest(k). If this isn't true then we are looking for a value to
+the right of the tree/subtree, and the method returns the right node's call to findKthSmallest(k - 1 - the number of nodes to the left).
+K is decremented like this since when we are no longer considering the left subtree and all its smaller elements, the Kth smallest
+element no longer ranks where it once was and must be adjusted.

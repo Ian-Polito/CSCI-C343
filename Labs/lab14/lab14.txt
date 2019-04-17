@@ -1,0 +1,9 @@
+C343 Summer 2018
+Lab 14
+Ian Polito
+ipolito
+
+componentAndSizes() method works by going through all the nodes in the list of nodes in the graph and if it comes across one
+that has not been visited, it increments the number of components found. Then it calls a modified version of BFS method to
+check the size of the component and adds new node to the toVisit list if they are connected to the initial node given. This
+allows it to print each component and their size.

@@ -1,0 +1,18 @@
+C343 Summer 2018
+Lab 03
+Ian Polito
+ipolito
+
+To implement MyCardSet, I created an instance variable deck, that is an array
+of Strings which represent the 52 playing cards. The constructor of the class
+calls the initialize method, which adds the cards to the deck using loops to
+add strings. To randomly draw cards in the drawRandomCard method, I created
+an instance of Random and used it to get a random integer between 0 and 51
+inclusive, and then got the card contained in that index of deck.
+
+To implement Tweet, I created two instance variables, content and author,
+which are two strings that represent the content and author of the tweet.
+The constructor for this class takes in two strings and initializes the
+instance variables. The printContent method merely prints out the content
+instance variable, and the contains method uses the String class's contains
+method to check if the given string is contained in the Tweet's content.

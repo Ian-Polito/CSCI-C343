@@ -1,0 +1,42 @@
+C343 Summer 2018
+Homework 8
+Ian Polito
+ipolito
+
+Task A
+topologicalSortWithQueue() was implemented by
+
+Task B
+
+1. 
+  | A  B  C  D  E   F
+--|-------------------
+A |    3  10        3
+B | 3     11 15     
+C | 10 11       5   20
+D |    15       3   
+E |       5  3      10   
+F | 3     20    10  
+
+2. 
+Vertex   Adjacency-list
+A        [B] -> [C] -> [F]
+B        [A] -> [C] -> [D]
+C        [A] -> [B] -> [E] -> [F]
+D        [B] -> [E]
+E        [C] -> [D] -> [F]
+F        [A] -> [C] -> [E]
+
+3. 
+An adjacency list would require 108 bytes of memory since the above graph requires 6
+linked lists where each node will require 6 bytes of memory (4 for the pointer and two
+for the vertex label) and since there are 18 nodes this uses 18 * 6 bytes of memory. An
+adjacency matrix on the other hand will utilize a 6 by 6 matrix where each index takes
+one byte for 36 bytes total, making the adjacency list take up more memory.
+
+4. 
+An adjacency list would require 54 bytes of memory since the above graph requires 6
+linked lists where each node will require 3 bytes of memory (2 for the pointer and 1
+for the vertex label) and since there are 18 nodes this uses 18 * 3 bytes of memory. An
+adjacency matrix on the other hand will utilize a 6 by 6 matrix where each index takes
+one byte for 36 bytes total, making the adjacency list take up more memory.

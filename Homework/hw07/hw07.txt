@@ -1,0 +1,50 @@
+C343 Summer 2018
+Homework 7
+Ian Polito
+ipolito
+
+Task A
+
+2.
+a) Insertion sort for sequence (56, 7, 28, 7, 35, 63, 14, 42, 35)
+	(56, 7, 28, 7, 35, 63, 14, 42, 35) starting point
+	(7, 56, 28, 7, 35, 63, 14, 42, 35) step 1
+	(7, 28, 56, 7, 35, 63, 14, 42, 35) step 2
+	(7, 7, 28, 56, 35, 63, 14, 42, 35) step 3
+	(7, 7, 28, 35, 56, 63, 14, 42, 35) step 4
+	(7, 7, 24, 28, 35, 56, 63, 42, 35) step 5
+	(7, 7, 24, 28, 35, 42, 56, 63, 35) step 6
+	(7, 7, 24, 28, 35, 35, 42, 56, 63) step 7
+b) Insertion sort for sequence (56, 7, 28, 7, 35, 63, 14, 42, 35)
+	(56, 7, 28, 7, 35, 63, 14, 42, 35) starting point
+	(56, 7, 28, 7, 35) (63, 14, 42, 35) split list
+	(56, 7, 28) (7, 35) (63, 14) (42, 35) split lists
+	(56, 7) (28) (7) (35) (63) (14) (42) (35) split lists
+	(56) (7) (28) (7) (35) (63) (14) (42) (35) split list
+	(7, 56) (7, 28) (35, 63) (14, 35, 42) merge
+	(7, 7, 28, 56) (14, 35, 35, 42, 63) merge
+	(7, 7, 14, 28, 35, 35, 42, 56, 63) merge
+
+3. For a sorting algorithm to be stable, it means that when a list is sorted, the elements
+stay where they are relative to each other. So if you have a list of songs sorted by name,
+then sort them by artist, the songs should still be sorted by name if they are by the same
+artist.
+
+4.
+a) Insertion sort is stable because as it goes through the list, it does not swap elements if
+the next element is not larger, which preserves the relative order of elements.
+b) Bubble sort is stable because as it goes through the list, it does not swap elements if
+the next element is not larger, much like insertion sort, which preserves the relative order.
+c) Mergesort is stable because in most implementations, when merging the lists together, the
+left-half element is added first if it is less than or equal to the right-half element, which
+preserves the relative order of elements.
+d) Heapsort is unstable because when it puts elements into a heap to make them ascending,
+it changes the relative order of elements.
+
+5. Even if the five-cent nickel wasn't a part of the US currency system, this algorithm would
+still produce optimal results, and would merely need to give more pennies to compensate. For
+example, if 15 cents needed to be given to the customer, normally a dime and a nickel would
+be given, but if the nickel did not exist, it would give a dime first, which is the largest coin
+that could be given without going over the total, then 5 pennies since they would then be the
+largest coins that could be given without going over the total, which would be the minimum
+number of coins needed if the nickel did not exist.
